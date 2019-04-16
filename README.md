@@ -113,3 +113,5 @@ module "example_gcs_bucket" {
 ## Run Tests
 
 When a commit is made to the repo - the [Gitlab pipeline](.gitlab-ci.yml) is triggered and does a terraform validate and format on the Hashicorp Configuration Language (HCL).
+
+In addition, the pipeline executes a test written in [Golang](https://golang.org/) using the [Terratest Go Library](https://github.com/gruntwork-io/terratest). The test provisions the infrastructure in the module and tests the outputs are as expected.
