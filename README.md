@@ -97,7 +97,7 @@ module "example_gcs_bucket" {
 | gcs_bucket_name | The name of the bucket | string | - | yes |
 | gcs_bucket_location | The geographical location the bucket is provisioned in | string | europe-west2 | no |
 | project_id | The ID of the project in which the resource belongs | string | - | yes |
-| gcs_bucket_storage_class| The avaialability of the bucket | string | REGIONAL | no |
+| gcs_bucket_storage_class| The availability of the bucket | string | REGIONAL | no |
 | versioning_enabled | While set to true, versioning is fully enabled for this bucket | string | true | no |
 | gcs_bucket_labels | A set of key/value label pairs to assign to the bucket | map| {} | no |
 | enable_acl | Manages the access control list (ACL) for an object in a Google Cloud Storage (GCS) bucket | string| true | no |
@@ -107,7 +107,7 @@ module "example_gcs_bucket" {
 
 | Name | Description |
 |------|-------------|
-| gcs_bucket_url | The URL of the gcs bucket |
-| gcs_bucket_uri | The URI of the gcs bucket |
+| gcs_bucket_url | The URL of the GCS bucket |
+| gcs_bucket_uri | The URI of the GCS bucket |
 
 ## Run Tests
