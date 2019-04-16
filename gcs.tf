@@ -8,7 +8,7 @@ resource "google_storage_bucket" "image_store" {
 
   labels = "${var.gcs_bucket_labels}"
 
-    versioning {
-        enabled = "${var.versioning_enabled}"
-    }
+  versioning {
+    enabled = "${var.versioning_enabled}"
   }
+}
