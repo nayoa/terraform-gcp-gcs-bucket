@@ -100,7 +100,7 @@ module "example_gcs_bucket" {
 | gcs_bucket_storage_class| The availability of the bucket | string | REGIONAL | no |
 | versioning_enabled | While set to true, versioning is fully enabled for this bucket | string | true | no |
 | gcs_bucket_labels | A set of key/value label pairs to assign to the bucket | map| {} | no |
-| enable_acl | Manages the access control list (ACL) for an object in a Google Cloud Storage (GCS) bucket | string| true | no |
+| enable_acl | Manages the access control list (ACL) for an object in a Google Cloud Storage (GCS) bucket | string | true | no |
 | role_entity | List of role/entity pairs in the form ROLE:entity | list | [] | no |
 
 ## Outputs
@@ -111,3 +111,5 @@ module "example_gcs_bucket" {
 | gcs_bucket_uri | The URI of the GCS bucket |
 
 ## Run Tests
+
+When a commit is made to the repo - the [Gitlab pipeline](.gitlab-ci.yml) is triggered and does a terraform validate and format on the Hashicorp Configuration Language (HCL).
