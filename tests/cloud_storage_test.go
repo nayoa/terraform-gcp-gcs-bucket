@@ -21,7 +21,7 @@ func TestTerraformCloudStorage(t *testing.T) {
 	zone := gcp.GetRandomRegion(t, projectId, nil, nil)
 
 	// Give the example bucket a unique name so we can distinguish it from any other bucket in your GCP account
-	expectedBucketName := fmt.Sprintf("terratest-gcp-example-%s", strings.ToLower(random.UniqueId()))
+	expectedBucketName := fmt.Sprintf("terratest-gcp-cloud-storage-%s", strings.ToLower(random.UniqueId()))
 
 	terraformOptions := &terraform.Options{
 		// The path to where our Terraform code is located

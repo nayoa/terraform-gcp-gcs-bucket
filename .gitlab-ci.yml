@@ -27,8 +27,14 @@ format:
     - tf=$(terraform fmt -write=false -diff); if [[ -n "$tf" ]]; then printf "$tf\n\n\nSome terraform files failed syntax validation, run 'terraform fmt' to fix\n\n"; exit 1; fi
 
 terratest:
+  image: google/cloud-sdk
   stage: terratest
   script:
-    - pushd tests
+    - gcloud version
+    - cd tests
+    - echo $GCLOUD_SERVICE_KEY | base64 -d > service-account.key
+    - gcloud auth activate-service-account --key-file=service-account.key
+    - gcloud --quiet config set project $GOOGLE_PROJECT_ID
     - go test -v
-    - popd
+    - cd -
+
