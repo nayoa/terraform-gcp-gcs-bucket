@@ -31,6 +31,7 @@ terratest:
     - apk add go
     - go version
     - gcloud version
+    - go get github.com/gruntwork-io/terratest/modules/terraform
     - cd tests
     - echo $GCLOUD_SERVICE_ACCOUNT | base64 -d > service-account.json
     - gcloud auth activate-service-account $SERVICE_ACCOUNT_EMAIL --key-file=service-account.json
@@ -38,3 +39,4 @@ terratest:
     - go test -v
     - rm service-account.json
     - cd -
+
