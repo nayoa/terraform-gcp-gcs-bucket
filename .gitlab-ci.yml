@@ -4,10 +4,6 @@ image:
     - '/usr/bin/env'
     - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
-cache:
-  paths:
-    - .terraform
-
 stages:
   - validate
   - format
@@ -34,6 +30,7 @@ terratest:
     - go get github.com/gruntwork-io/terratest/modules/terraform
     - cd tests
     - echo $GCLOUD_SERVICE_ACCOUNT | base64 -d > service-account.json
+    - export $GOOGLE_APPLICATION_CREDENTIALS=${PWD}/service-account.json
     - gcloud auth activate-service-account $SERVICE_ACCOUNT_EMAIL --key-file=service-account.json
     - gcloud --quiet config set project $GOOGLE_CLOUD_PROJECT_ID
     - go test -v
