@@ -30,6 +30,8 @@ terratest:
   script:
     - apk update && apk upgrade
     - apk add go libc-dev
+    - go get github.com/gruntwork-io/terratest/modules/gcp
+    - go get github.com/gruntwork-io/terratest/modules/terraform
     - cd tests
     - echo $GCLOUD_SERVICE_ACCOUNT | base64 -d > service-account.json
     - gcloud auth activate-service-account $SERVICE_ACCOUNT_EMAIL --key-file=service-account.json
