@@ -29,7 +29,7 @@ terratest:
   stage: terratest
   script:
     - apk update && apk upgrade
-    - apk add go libc-dev
+    - apk add go libc-dev terraform
     - go get github.com/gruntwork-io/terratest/modules/gcp
     - go get github.com/gruntwork-io/terratest/modules/terraform
     - cd tests
@@ -39,4 +39,3 @@ terratest:
     - go test -v
     - rm service-account.json
     - cd -
-

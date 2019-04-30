@@ -5,8 +5,8 @@ variable "gcs_bucket_name" {
 
 variable "gcs_bucket_location" {
   type        = "string"
-  default     = "europe-west1"
-  description = "The geographical location the bucket is provisioned in. e.g. europe-west-2"
+  default     = "europe-west2"
+  description = "The geographical location the bucket is provisioned in. e.g. europe-west2"
 }
 
 variable "project_id" {
