@@ -28,11 +28,8 @@ terratest:
   image: google/cloud-sdk:alpine
   stage: terratest
   script:
-    - apk add go
-    - go version
-    - gcloud version
-    - go get github.com/gruntwork-io/terratest/modules/terraform
-    - go get github.com/gruntwork-io/terratest/modules/gcp
+    - apk update && apk upgrade
+    - apk add go libc-dev
     - cd tests
     - echo $GCLOUD_SERVICE_ACCOUNT | base64 -d > service-account.json
     - gcloud auth activate-service-account $SERVICE_ACCOUNT_EMAIL --key-file=service-account.json
