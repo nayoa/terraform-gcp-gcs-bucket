@@ -24,6 +24,7 @@ terratest:
   only:
     refs:
     - master
+    - merge_requests
   image: google/cloud-sdk:alpine
   stage: terratest
   script:
