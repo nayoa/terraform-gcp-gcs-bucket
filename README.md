@@ -9,6 +9,11 @@ These types of resources are supported:
 
 ## Dependencies
 
+<details>
+  <summary>
+   What to install to use the module locally
+  </summary>
+
 * [Google Cloud SDK (gcloud) >= 241.0.0](https://cloud.google.com/sdk/gcloud/)
 
 ```
@@ -53,6 +58,7 @@ $ brew cask install google-cloud-sdk
 ```bash
 $ brew install terraform
 ```
+</details>
 
 ## Usage
 
