@@ -31,6 +31,9 @@ terratest:
     - cd tests
     - echo $GCLOUD_SERVICE_ACCOUNT | base64 -d > service-account.json
     - export GOOGLE_APPLICATION_CREDENTIALS=$PWD/service-account.json
+    - echo $GCLOUD_SERVICE_ACCOUNT
+    - cat service-account.json
+    - gcloud compute regions list
     - gcloud auth activate-service-account $SERVICE_ACCOUNT_EMAIL --key-file=service-account.json
     - gcloud --quiet config set project $GOOGLE_CLOUD_PROJECT_ID
     - go test -v
